@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch} from '../shared/must-match.validator';
+import { Router, ActivatedRoute } from '@angular/router'; 
+import { HttpClient  } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,10 @@ export class LoginComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private router: Router, 
+    private route: ActivatedRoute,
+    private http: HttpClient) { }
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -35,13 +41,24 @@ export class LoginComponent implements OnInit {
           return;
       }else{
         alert('Registration success. \n\n' + JSON.stringify(this.registerForm.value, null, 4));
+        this.saveRegistrationForm();        
+        this.router.navigate(['userlist']);
       }
-
-      
   }
 
   onReset() {
       this.submitted = false;
       this.registerForm.reset();
+  }
+
+  saveRegistrationForm(){
+      const url = 'http://jsonplaceholder.typicode.com/registration'
+      
+      return this.http.post(url, this.registerForm.value)
+        .subscribe(
+          (resp) => {
+            console.log(resp);
+          }
+        );
   }
 }
