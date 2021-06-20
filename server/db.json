@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Dharmasen yadav",
+      "mobile": "9494876748",
+      "email": "mdyadav.sm@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "Ganesh yadav",
+      "mobile": "8096501441",
+      "email": "ganesh@gmail.com"
+    },
+    {
+      "id": "3",
+      "name": "Dinesh yadav",
+      "mobile": "9878675634",
+      "email": "dinesh@gmail.com"
+    }
+  ],
+  "loginDetails": [
+    {
+      "name": "Suresh yadav",
+      "mobileNumber": "8760012345",
+      "email": "suresh@gmail.com",
+      "password": "123456",
+      "confirmPassword": "123456",
+      "id": 1
+    }
+  ]
+}

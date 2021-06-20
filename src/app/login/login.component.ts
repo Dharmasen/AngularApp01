@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   }
 
   saveRegistrationForm(){
-      const url = 'http://jsonplaceholder.typicode.com/registration'
+      const url = 'http://localhost:3000/loginDetails'
       
       return this.http.post(url, this.registerForm.value)
         .subscribe(

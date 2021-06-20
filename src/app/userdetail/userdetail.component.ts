@@ -23,7 +23,7 @@ private selectedData:any = []
   }
 
   getSelectedItemDetails(id){
-    const url ='https://jsonplaceholder.typicode.com/todos'
+    const url ='http://localhost:3000/users'
     this.http.get(url+'/'+id).subscribe((res)=>{
       this.selectedData = res
       console.log(this.selectedData)

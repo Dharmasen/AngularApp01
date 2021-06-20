@@ -20,7 +20,7 @@ export class UserlistComponent implements OnInit {
   }
 
   getDataList(){
-     const url ='https://jsonplaceholder.typicode.com/todos'
+     const url ='http://localhost:3000/users'
      this.http.get(url).subscribe((res)=>{
       this.data = res
       console.log(this.data)
@@ -28,7 +28,7 @@ export class UserlistComponent implements OnInit {
   }
 
   selectedRow(data){
-    this.router.navigate(['/userdeatil', data.id]);
+    this.router.navigate(['/userdetail', data.id]);
   }
 
 }

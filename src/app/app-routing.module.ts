@@ -15,7 +15,7 @@ import { CarouselComponent } from './carousel/carousel.component';
       { path: 'home', component: HomeComponent },
       { path: 'registration', component: LoginComponent },
       { path: 'userlist', component: UserlistComponent },
-      { path: 'userdeatil/:id', component: UserdetailComponent },
+      { path: 'userdetail/:id', component: UserdetailComponent },
       { path: 'carousel', component: CarouselComponent },
 
   ])
